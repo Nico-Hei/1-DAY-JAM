@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cqc04tqt8wqyp"]
+
+[ext_resource type="Script" uid="uid://cf7cc7gwnst56" path="res://scripts/gameloop.gd" id="1_5o4sk"]
+
+[node name="GameLoop" type="Node2D" unique_id=1129294991]
+z_index = 1
+script = ExtResource("1_5o4sk")

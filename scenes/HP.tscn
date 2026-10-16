@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cpx726nt1cvfr"]
+
+[ext_resource type="Texture2D" uid="uid://bh7we3s8e2h5t" path="res://assets/Numbers.png" id="1_ubb48"]
+[ext_resource type="Script" uid="uid://cbklla3eogd5c" path="res://scripts/hp.gd" id="2_reiv6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_reiv6"]
+texture = ExtResource("1_ubb48")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gk0y0"]
+sources/0 = SubResource("TileSetAtlasSource_reiv6")
+
+[node name="HP" type="TileMapLayer" unique_id=1281972906]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_gk0y0")
+script = ExtResource("2_reiv6")

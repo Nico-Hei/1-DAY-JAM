@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ddncdwqxnaiia"]
+
+[ext_resource type="Texture2D" uid="uid://dr0xl7mx3hyaq" path="res://assets/Block_Level1.png" id="1_bwmav"]
+[ext_resource type="Script" uid="uid://b5ii2fduiaqc8" path="res://scripts/block.gd" id="2_wtxr1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7d42"]
+texture = ExtResource("1_bwmav")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cbyeo"]
+sources/0 = SubResource("TileSetAtlasSource_m7d42")
+
+[node name="Block" type="TileMapLayer" unique_id=1529209869]
+position = Vector2(128, 64)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_cbyeo")
+script = ExtResource("2_wtxr1")

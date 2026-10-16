@@ -1,0 +1,28 @@
+[gd_scene format=4 uid="uid://swlyquyga6hh"]
+
+[ext_resource type="PackedScene" uid="uid://cpx726nt1cvfr" path="res://scenes/HP.tscn" id="1_dj8aq"]
+[ext_resource type="Texture2D" uid="uid://c1arqi7lib4t1" path="res://assets/Test.png" id="2_ro3t7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5en4g"]
+texture = ExtResource("2_ro3t7")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cbyeo"]
+sources/0 = SubResource("TileSetAtlasSource_5en4g")
+
+[node name="UI" type="Control" unique_id=844559182]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HP" parent="." unique_id=1281972906 instance=ExtResource("1_dj8aq")]
+position = Vector2(288, 16)
+
+[node name="Environment" type="TileMapLayer" parent="." unique_id=1780040902]
+tile_map_data = PackedByteArray("AAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAHAAcAAAABAAAAAAAGAAcAAAABAAAAAAAFAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAADAAkAAAAAAAAAAAACAAoAAAAAAAAAAAABAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAOAAcAAAAAAAEAAAAPAAgAAAAAAAEAAAAQAAkAAAAAAAEAAAARAAoAAAAAAAEAAAASAAsAAAAAAAEAAAATAAwAAAAAAAEAAAAAAA0AAAABAAAAAAABAA0AAAABAAAAAAACAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAABAAAAAAAGAA0AAAABAAAAAAAHAA0AAAABAAAAAAAIAA0AAAABAAAAAAAJAA0AAAABAAAAAAAKAA0AAAABAAAAAAALAA0AAAABAAAAAAAMAA0AAAABAAAAAAANAA0AAAABAAAAAAAOAA0AAAABAAAAAAAPAA0AAAABAAAAAAAQAA0AAAABAAAAAAARAA0AAAABAAAAAAASAA0AAAABAAAAAAATAA0AAAABAAAAAAA=")
+tile_set = SubResource("TileSet_cbyeo")

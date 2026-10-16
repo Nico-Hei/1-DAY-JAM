@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://da5q12qxuyw6e"]
+
+[ext_resource type="PackedScene" uid="uid://cqc04tqt8wqyp" path="res://scenes/GameLoop.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://swlyquyga6hh" path="res://scenes/UI.tscn" id="1_rvslj"]
+
+[node name="Main" type="Node2D" unique_id=1708641142]
+
+[node name="UI" parent="." unique_id=844559182 instance=ExtResource("1_rvslj")]
+
+[node name="GameLoop" parent="." unique_id=1129294991 instance=ExtResource("1_errlg")]

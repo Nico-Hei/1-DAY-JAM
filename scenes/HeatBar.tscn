@@ -1,0 +1,67 @@
+[gd_scene format=4 uid="uid://de6jflrt4jkok"]
+
+[ext_resource type="Texture2D" uid="uid://csylbdfiehvib" path="res://assets/Heatbar.png" id="1_q6wkj"]
+[ext_resource type="Script" uid="uid://dmxpd165lnkwk" path="res://scripts/heatbar.gd" id="1_xbd6f"]
+[ext_resource type="Texture2D" uid="uid://ds7nw5ecxwo7g" path="res://assets/Heatbar_Cooldown.png" id="3_qgmxx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbd6f"]
+texture = ExtResource("1_q6wkj")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vevni"]
+sources/0 = SubResource("TileSetAtlasSource_xbd6f")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgmxx"]
+texture = ExtResource("1_q6wkj")
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xbd6f"]
+sources/0 = SubResource("TileSetAtlasSource_qgmxx")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqtfi"]
+texture = ExtResource("1_q6wkj")
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qgmxx"]
+sources/0 = SubResource("TileSetAtlasSource_gqtfi")
+
+[node name="HeatBar" type="Control" unique_id=1853070299]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbd6f")
+
+[node name="Bar" type="TileMapLayer" parent="." unique_id=2073690047]
+position = Vector2(112, 152)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAAAAAAAADA=")
+tile_set = SubResource("TileSet_vevni")
+
+[node name="Zone" type="TileMapLayer" parent="." unique_id=559659540]
+z_index = 1
+position = Vector2(112, 152)
+tile_set = SubResource("TileSet_xbd6f")
+
+[node name="Indicator" type="TileMapLayer" parent="." unique_id=462857806]
+z_index = 2
+position = Vector2(112, 152)
+tile_set = SubResource("TileSet_qgmxx")
+
+[node name="Timer" type="Timer" parent="Indicator" unique_id=1692721552]
+wait_time = 0.4
+autostart = true
+
+[node name="Cooldown" type="Timer" parent="Indicator" unique_id=627276140]
+wait_time = 2.0
+
+[node name="Cooldown" type="Sprite2D" parent="." unique_id=1620196395]
+visible = false
+position = Vector2(128, 176)
+texture = ExtResource("3_qgmxx")
+
+[connection signal="timeout" from="Indicator/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Indicator/Cooldown" to="." method="_on_cooldown_timeout"]
