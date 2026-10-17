@@ -5,3 +5,7 @@
 [node name="GameLoop" type="Node2D" unique_id=1129294991]
 z_index = 1
 script = ExtResource("1_5o4sk")
+
+[node name="Timer" type="Timer" parent="." unique_id=1334725234]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

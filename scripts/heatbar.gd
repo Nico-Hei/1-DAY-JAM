@@ -27,10 +27,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Space") && !inputLocked:
 		if  randomPosition == possiblePositions[indicatorPosition-1]:
+			$AudioStreamPlayer2D.play()
+			resetZone()
 			emit_signal("hit")
 		else:
 			inputLocked = true
 			cooldown_notification.visible = true
+			$AudioStreamPlayer2D2.play()
 			cooldown.start()
 
 func _on_timer_timeout() -> void:
@@ -49,8 +52,13 @@ func _on_cooldown_timeout() -> void:
 
 func setLevel(level: int) -> void:
 	if level == 1:
-		speed.wait_time = 0.4
-	elif level == 2:
 		speed.wait_time = 0.3
+	elif level == 2:
+		speed.wait_time = 0.1
 	elif level == 3: 
-		speed.wait_time = 0.2
+		speed.wait_time = 0.1
+
+func resetZone() -> void:
+	zone.erase_cell(randomPosition)
+	randomPosition = possiblePositions.pick_random()
+	zone.set_cell(randomPosition, 0, Vector2i(3,0))
